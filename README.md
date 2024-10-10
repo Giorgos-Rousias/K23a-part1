@@ -23,3 +23,33 @@ Steps to solve disk quota exceeded
 Εντολή για σύνδεση στα linux της σχολής μέσω terminal:
 
     ssh sdi1900166@linux08.di.uoa.gr
+
+
+MyCppProject/
+│
+├── src/
+│   ├── core/              # Core logic of the application
+│   │   ├── CoreClass.cpp
+│   │   └── OtherCore.cpp
+│   └── utils/             # Utility functions
+│       ├── StringUtils.cpp
+│       └── MathUtils.cpp
+│
+├── include/
+│   ├── core/              # Headers for core logic
+│   │   ├── CoreClass.hpp
+│   │   └── OtherCore.hpp
+│   └── utils/             # Headers for utility functions
+│       ├── StringUtils.hpp
+│       └── MathUtils.hpp
+│
+├── build/
+├── tests/
+├── Makefile
+├── .gitignore
+└── README.md
+
+
+Check for memory leaks:
+
+    valgrind --leak-check=full ./your_program

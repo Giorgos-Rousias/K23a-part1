@@ -6,8 +6,8 @@ SRCDIR = src
 INCLUDEDIR = include
 
 # List of source files
-SRCS = $(wildcard $(SRCDIR)/*.cpp)
-# SRCS = $(wildcard $(SRCDIR)/**/*.cpp) # Add this back if you add more directories into the src
+# SRCS = $(wildcard $(SRCDIR)/*.cpp)
+SRCS = $(wildcard $(SRCDIR)/**/*.cpp) # Add this back if you add more directories into the src
 
 # Generate object file paths in OBJDIR corresponding to source files
 OBJS = $(patsubst $(SRCDIR)/%.cpp, $(OBJDIR)/%.o, $(SRCS))
