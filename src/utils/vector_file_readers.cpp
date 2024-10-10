@@ -18,18 +18,25 @@ using namespace std;
  */
 template <typename T>
 void read_file_vecs(const string& filename, vector<vector<T>>& vectors) {
+    // Open the file
     ifstream file(filename, ios::binary);
+
+    // Check if the file is open
     if (!file.is_open()) {
         cerr << "Unable to open file: " << filename << endl;
         return;
     }
 
+    // Read vectors from the file
     while (!file.eof()) {
         int dim;
         file.read(reinterpret_cast<char*>(&dim), sizeof(int));  // Read dimension
         if (file.eof()) break;  // To prevent reading beyond the file
 
+        // Read vector components from the file and populate the vector
+        // Type of vector components is T (template parameter)
         vector<T> vec(dim);
+
         file.read(reinterpret_cast<char*>(vec.data()), dim * sizeof(T));  // Read vector components
 
         if (file.gcount() != static_cast<streamsize>(dim * sizeof(T))) {
